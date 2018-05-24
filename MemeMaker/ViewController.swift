@@ -20,13 +20,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var shareButton: UIToolbar!
     
     let textViewDelegate = textFieldDelegate()
-    
-    
+    let imagePickerController = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         topTextField.delegate = textViewDelegate
         bottomTextField.delegate = textViewDelegate
+        topTextField.defaultTextAttributes = textViewDelegate.textAttributes
+        bottomTextField.defaultTextAttributes = textViewDelegate.textAttributes
+        
+        memeView.contentMode = .scaleAspectFit
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,5 +38,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
 
+    @IBAction func resetState(_ sender: Any) {
+//        self.resetState(UIButton)
+//        self.resetState(sender)
+    }
+    
 }
 
