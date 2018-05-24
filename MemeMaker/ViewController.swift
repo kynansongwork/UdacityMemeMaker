@@ -8,11 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var navBar: UIToolbar!
+    @IBOutlet weak var toolBar: UIToolbar!
+    
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
+    
+    @IBOutlet weak var memeView: UIImageView!
+    @IBOutlet weak var shareButton: UIToolbar!
+    
+    let textViewDelegate = textFieldDelegate()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        topTextField.delegate = textViewDelegate
+        bottomTextField.delegate = textViewDelegate
     }
 
     override func didReceiveMemoryWarning() {
