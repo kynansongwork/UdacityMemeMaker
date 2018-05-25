@@ -54,7 +54,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeToKeyboardNotifications()    
     }
     
-    //Image Picking
+    //////////////////Image Picking///////////////////////
     
     @IBAction func albumPickerButton(_ sender: Any) {
         imagePickerController.allowsEditing = false
@@ -75,7 +75,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
     
-    //Keyboard Behaviour
+    ////////////////////Keyboard Behaviour////////////////////////////
     
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottomTextField.isFirstResponder {
@@ -107,12 +107,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
+    ////////////////////meme functions////////////////////////
+    
     
 
     @IBAction func resetState(_ sender: Any) {
-//        self.resetState(UIButton)
-//        self.resetState(sender)
+        let defaultText = "Tap here"
+        topTextField.text = defaultText
+        bottomTextField.text = defaultText
+        memeView.image = nil
+        
     }
+    
+
     
 }
 
