@@ -18,6 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t3O-a3-zjd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-IZ-Ulx" userLabel="NavBar">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fZn-Gy-cKc"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="action" id="H26-cQ-b0b">
+                                        <connections>
+                                            <action selector="shareMeme:" destination="BYZ-38-t0r" id="kbf-rX-btm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="600" id="GHU-wJ-bjB"/>
+                                    <barButtonItem systemItem="trash" id="bbc-rN-szG">
+                                        <connections>
+                                            <action selector="resetState:" destination="BYZ-38-t0r" id="e2H-eN-SeQ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjB-5h-SPZ">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
@@ -30,39 +52,25 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="600" id="kjn-Np-reu"/>
-                                    <barButtonItem title="Camera" id="CWK-0W-aN9"/>
-                                </items>
-                            </toolbar>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-IZ-Ulx" userLabel="NavBar">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="fZn-Gy-cKc"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Share" id="H26-cQ-b0b"/>
-                                    <barButtonItem width="600" id="GHU-wJ-bjB"/>
-                                    <barButtonItem title="Cancel" id="bbc-rN-szG">
+                                    <barButtonItem systemItem="camera" id="CWK-0W-aN9">
                                         <connections>
-                                            <action selector="resetState:" destination="BYZ-38-t0r" id="e2H-eN-SeQ"/>
+                                            <action selector="cameraButton:" destination="BYZ-38-t0r" id="puw-VC-uQC"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tap here" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="FJH-jL-gxB" userLabel="topTextField">
-                                <rect key="frame" x="78" y="94" width="219" height="32"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tap here" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wh1-Lg-dLN" userLabel="bottomTextField">
                                 <rect key="frame" x="78" y="562" width="219" height="32"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t3O-a3-zjd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
-                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tap here" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="FJH-jL-gxB" userLabel="topTextField">
+                                <rect key="frame" x="78" y="94" width="219" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -78,7 +86,6 @@
                             <constraint firstItem="t3O-a3-zjd" firstAttribute="bottom" secondItem="hjB-5h-SPZ" secondAttribute="top" id="Yd1-Y9-Pqc"/>
                             <constraint firstItem="dbM-IZ-Ulx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bE9-kd-rE8"/>
                             <constraint firstItem="t3O-a3-zjd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dER-XT-uPk"/>
-                            <constraint firstItem="t3O-a3-zjd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="dxd-5m-zNe"/>
                             <constraint firstItem="hjB-5h-SPZ" firstAttribute="top" secondItem="Wh1-Lg-dLN" secondAttribute="bottom" constant="29" id="fu7-XE-72B"/>
                             <constraint firstItem="Wh1-Lg-dLN" firstAttribute="leading" secondItem="FJH-jL-gxB" secondAttribute="leading" id="iXN-wD-dMV"/>
                             <constraint firstItem="FJH-jL-gxB" firstAttribute="top" secondItem="dbM-IZ-Ulx" secondAttribute="bottom" constant="30" id="lXb-kk-Wx1"/>
@@ -92,7 +99,7 @@
                         <outlet property="cameraButton" destination="CWK-0W-aN9" id="edC-rS-JMV"/>
                         <outlet property="memeView" destination="t3O-a3-zjd" id="hAO-5J-eWt"/>
                         <outlet property="navBar" destination="dbM-IZ-Ulx" id="EM0-Iv-m8L"/>
-                        <outlet property="shareButton" destination="dbM-IZ-Ulx" id="A8v-jI-rQI"/>
+                        <outlet property="shareButton" destination="H26-cQ-b0b" id="B7V-5a-3Yy"/>
                         <outlet property="toolBar" destination="hjB-5h-SPZ" id="brj-Km-wUN"/>
                         <outlet property="topTextField" destination="FJH-jL-gxB" id="tir-46-96y"/>
                     </connections>

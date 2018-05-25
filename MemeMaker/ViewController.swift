@@ -17,7 +17,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     
     @IBOutlet weak var memeView: UIImageView!
-    @IBOutlet weak var shareButton: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    
     
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
@@ -54,6 +55,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         unsubscribeToKeyboardNotifications()    
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        shareButton.isEnabled = self.memeView.image != nil
+        //if the image view is not empty, the share button will be enabled.
+    }
+    
     //////////////////Image Picking///////////////////////
     
     @IBAction func albumPickerButton(_ sender: Any) {
@@ -73,6 +79,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    ///////////////Camera function/////////////////////////
+    
+    @IBAction func cameraButton(_ sender: Any) {
+        imagePickerController.allowsEditing = false
+        imagePickerController.sourceType = .camera
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     ////////////////////Keyboard Behaviour////////////////////////////
@@ -110,6 +124,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     ////////////////////meme functions////////////////////////
     
     
+    
+    ////////////////////share functions////////////////////////
+    
+    @IBAction func shareMeme(_ sender: Any) {
+    }
+    
+    //Reset function.
 
     @IBAction func resetState(_ sender: Any) {
         let defaultText = "Tap here"
