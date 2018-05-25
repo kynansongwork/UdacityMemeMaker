@@ -19,7 +19,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var memeView: UIImageView!
     @IBOutlet weak var shareButton: UIToolbar!
     
-
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     let textViewDelegate = textFieldDelegate()
@@ -29,6 +28,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         topTextField.delegate = textViewDelegate
         bottomTextField.delegate = textViewDelegate
+        
+        //Calling text attributes
         topTextField.defaultTextAttributes = textViewDelegate.textAttributes
         bottomTextField.defaultTextAttributes = textViewDelegate.textAttributes
         
@@ -43,8 +44,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillAppear(animated)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         //If a camera is available, this will be true, enabling the button.
-        
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    //Image Picking
+    
+    @IBAction func albumPickerButton(_ sender: Any) {
+        imagePickerController.allowsEditing = false
+        imagePickerController.sourceType = .photoLibrary
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            memeView.contentMode = .scaleAspectFit
+            memeView.image = pickedImage
+        }
+    }
+    
+    
 
     @IBAction func resetState(_ sender: Any) {
 //        self.resetState(UIButton)
