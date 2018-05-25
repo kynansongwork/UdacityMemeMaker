@@ -20,6 +20,9 @@
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjB-5h-SPZ">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gHa-Ig-EXJ"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Album" id="r7B-NP-hy2">
                                         <connections>
@@ -32,6 +35,9 @@
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-IZ-Ulx" userLabel="NavBar">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fZn-Gy-cKc"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Share" id="H26-cQ-b0b"/>
                                     <barButtonItem width="600" id="GHU-wJ-bjB"/>
