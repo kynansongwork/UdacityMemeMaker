@@ -178,5 +178,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         memeView.image = nil
         
     }
+    
+    /**Learnt from Udacity,https://www.raywenderlich.com/133825/uiactivityviewcontroller-tutorial, http://swiftlylearning.blogspot.co.uk and http://www.codingexplorer.com/choosing-images-with-uiimagepickercontroller-in-swift/
+     **/
 }
 
