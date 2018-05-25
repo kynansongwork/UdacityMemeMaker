@@ -26,6 +26,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePickerController.delegate = self
+        //Remeber to set this delegate or the image won't get picked.
         topTextField.delegate = textViewDelegate
         bottomTextField.delegate = textViewDelegate
         
@@ -63,6 +65,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             memeView.contentMode = .scaleAspectFit
             memeView.image = pickedImage
         }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     
