@@ -19,8 +19,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t3O-a3-zjd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tap here" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="FJH-jL-gxB" userLabel="topTextField">
+                                <rect key="frame" x="78" y="94" width="219" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tap here" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wh1-Lg-dLN" userLabel="bottomTextField">
+                                <rect key="frame" x="78" y="562" width="219" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-IZ-Ulx" userLabel="NavBar">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <constraints>
@@ -59,18 +71,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tap here" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wh1-Lg-dLN" userLabel="bottomTextField">
-                                <rect key="frame" x="78" y="562" width="219" height="32"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tap here" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="FJH-jL-gxB" userLabel="topTextField">
-                                <rect key="frame" x="78" y="94" width="219" height="32"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -79,16 +79,18 @@
                             <constraint firstItem="Wh1-Lg-dLN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Z8-xr-ic7"/>
                             <constraint firstItem="dbM-IZ-Ulx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ByZ-y5-lMO"/>
                             <constraint firstItem="FJH-jL-gxB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JsT-RB-WYx"/>
-                            <constraint firstItem="t3O-a3-zjd" firstAttribute="top" secondItem="dbM-IZ-Ulx" secondAttribute="bottom" id="JuY-9P-p6W"/>
+                            <constraint firstItem="t3O-a3-zjd" firstAttribute="top" secondItem="dbM-IZ-Ulx" secondAttribute="bottom" constant="-44" id="JuY-9P-p6W"/>
                             <constraint firstItem="hjB-5h-SPZ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PRi-ED-1zx"/>
                             <constraint firstItem="FJH-jL-gxB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="Q5a-eb-UZr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FJH-jL-gxB" secondAttribute="trailing" constant="78" id="T35-zA-Rx2"/>
-                            <constraint firstItem="t3O-a3-zjd" firstAttribute="bottom" secondItem="hjB-5h-SPZ" secondAttribute="top" id="Yd1-Y9-Pqc"/>
+                            <constraint firstItem="t3O-a3-zjd" firstAttribute="bottom" secondItem="hjB-5h-SPZ" secondAttribute="top" constant="44" id="Yd1-Y9-Pqc"/>
                             <constraint firstItem="dbM-IZ-Ulx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bE9-kd-rE8"/>
                             <constraint firstItem="t3O-a3-zjd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dER-XT-uPk"/>
                             <constraint firstItem="hjB-5h-SPZ" firstAttribute="top" secondItem="Wh1-Lg-dLN" secondAttribute="bottom" constant="29" id="fu7-XE-72B"/>
                             <constraint firstItem="Wh1-Lg-dLN" firstAttribute="leading" secondItem="FJH-jL-gxB" secondAttribute="leading" id="iXN-wD-dMV"/>
+                            <constraint firstItem="t3O-a3-zjd" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="iyX-QQ-EdY"/>
                             <constraint firstItem="FJH-jL-gxB" firstAttribute="top" secondItem="dbM-IZ-Ulx" secondAttribute="bottom" constant="30" id="lXb-kk-Wx1"/>
+                            <constraint firstItem="t3O-a3-zjd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oLR-Tx-v8o"/>
                             <constraint firstItem="dbM-IZ-Ulx" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="w34-FB-ZoE"/>
                             <constraint firstItem="t3O-a3-zjd" firstAttribute="leading" secondItem="dbM-IZ-Ulx" secondAttribute="leading" id="wqy-eg-W7Y"/>
                         </constraints>
