@@ -79,6 +79,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomTextField" destination="Wh1-Lg-dLN" id="fFf-RQ-lMp"/>
+                        <outlet property="cameraButton" destination="CWK-0W-aN9" id="0Qf-9u-4pj"/>
                         <outlet property="memeView" destination="t3O-a3-zjd" id="hAO-5J-eWt"/>
                         <outlet property="navBar" destination="dbM-IZ-Ulx" id="EM0-Iv-m8L"/>
                         <outlet property="shareButton" destination="dbM-IZ-Ulx" id="A8v-jI-rQI"/>

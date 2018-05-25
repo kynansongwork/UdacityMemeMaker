@@ -19,6 +19,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var memeView: UIImageView!
     @IBOutlet weak var shareButton: UIToolbar!
     
+
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    
     let textViewDelegate = textFieldDelegate()
     let imagePickerController = UIImagePickerController()
     
@@ -29,14 +32,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.defaultTextAttributes = textViewDelegate.textAttributes
         bottomTextField.defaultTextAttributes = textViewDelegate.textAttributes
         
+        //text alignment
+        topTextField.textAlignment = .center
+        bottomTextField.textAlignment = .center
+        
         memeView.contentMode = .scaleAspectFit
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        //If a camera is available, this will be true, enabling the button.
+        
     }
-
 
     @IBAction func resetState(_ sender: Any) {
 //        self.resetState(UIButton)
