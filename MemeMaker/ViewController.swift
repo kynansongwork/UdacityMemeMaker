@@ -123,11 +123,50 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     ////////////////////meme functions////////////////////////
     
+    func generateMemedImage() -> UIImage {
+        
+        toolBar.isHidden = true
+        navBar.isHidden = true
+        //When this function is called, the toolbar and navbar are hidden.
+        
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let editedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        //Gets the current image.
+        
+        toolBar.isHidden = false
+        navBar.isHidden = false
+        //Returns nav and tool bars once image has been captured.
+        
+        return editedImage
+    }
     
+    func save(editedImage: UIImage) {
+        
+        let memeImage = Meme(
+            topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeView.image!, memeImage: editedImage
+            //Saves a meme object
+        )
+        
+    }
     
     ////////////////////share functions////////////////////////
     
     @IBAction func shareMeme(_ sender: Any) {
+         //meme functions called here
+        
+        let savedImage = generateMemedImage()
+        
+        let activityViewController = UIActivityViewController(
+        activityItems: [savedImage], applicationActivities: nil)
+        //The controller is passed an image, and a meme image is created by the generateMemedImage function
+        
+        present(activityViewController, animated: true, completion: nil)
+        
+        activityViewController.completionWithItemsHandler = { (_, _, _, _) in
+            self.save(editedImage: savedImage)
+            //Expecrts four return types. However in this case, none are available.
+        }
     }
     
     //Reset function.
@@ -139,8 +178,5 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         memeView.image = nil
         
     }
-    
-
-    
 }
 
