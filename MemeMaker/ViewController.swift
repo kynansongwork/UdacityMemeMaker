@@ -165,7 +165,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         activityViewController.completionWithItemsHandler = { (_, _, _, _) in
             self.save(editedImage: savedImage)
-            //Expecrts four return types. However in this case, none are available.
+            //Expects four return types. However in this case, none are available.
         }
     }
     
