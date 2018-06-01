@@ -12,17 +12,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBOutlet weak var navBar: UIToolbar!
     @IBOutlet weak var toolBar: UIToolbar!
-    
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
-    
     @IBOutlet weak var memeView: UIImageView!
     @IBOutlet weak var shareButton: UIBarButtonItem!
-    
-    
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
-    let textViewDelegate = textFieldDelegate()
+    let textViewDelegate = TextFieldDelegate()
     let imagePickerController = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -33,12 +29,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.delegate = textViewDelegate
         
         //Calling text attributes
-        topTextField.defaultTextAttributes = textViewDelegate.textAttributes
-        bottomTextField.defaultTextAttributes = textViewDelegate.textAttributes
-        
-        //text alignment
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
+        textViewDelegate.textFieldCustomisation(textField: topTextField, defaultText: "Tap Here")
+        textViewDelegate.textFieldCustomisation(textField: bottomTextField, defaultText: "Tap Here")
         
         memeView.contentMode = .scaleAspectFit
     }
@@ -56,16 +48,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         shareButton.isEnabled = self.memeView.image != nil
         //if the image view is not empty, the share button will be enabled.
+    }
+    
+    func imagePickingBehaviour(sourceType: UIImagePickerControllerSourceType) {
+        imagePickerController.allowsEditing = false
+        imagePickerController.sourceType = sourceType
+        present(imagePickerController, animated: true, completion: nil)
+        
     }
     
     //////////////////Image Picking///////////////////////
     
     @IBAction func albumPickerButton(_ sender: Any) {
-        imagePickerController.allowsEditing = false
-        imagePickerController.sourceType = .photoLibrary
-        present(imagePickerController, animated: true, completion: nil)
+        imagePickingBehaviour(sourceType: .photoLibrary)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
@@ -84,22 +82,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     ///////////////Camera function/////////////////////////
     
     @IBAction func cameraButton(_ sender: Any) {
-        imagePickerController.allowsEditing = false
-        imagePickerController.sourceType = .camera
-        present(imagePickerController, animated: true, completion: nil)
+        imagePickingBehaviour(sourceType: .camera)
     }
     
     ////////////////////Keyboard Behaviour////////////////////////////
     
     @objc func keyboardWillShow(_ notification:Notification) {
         if bottomTextField.isFirstResponder {
-            view.frame.origin.y -= getKeyBoardHeight(notification)
+            view.frame.origin.y = -getKeyBoardHeight(notification)
         }
     }
     
     @objc func keyboardWillHide(_ notification:Notification) {
         if bottomTextField.isFirstResponder {
-            view.frame.origin.y += getKeyBoardHeight(notification)
+            view.frame.origin.y = 0
         }
     }
     //Checks if bottom text field is furst responder. If so it will shift the view based on keyboard size.
