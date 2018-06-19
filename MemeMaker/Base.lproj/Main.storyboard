@@ -134,7 +134,7 @@
         <!--MemeDetailsViewController-->
         <scene sceneID="q8O-sF-rvY">
             <objects>
-                <viewController id="0tk-6A-u4Z" userLabel="MemeDetailsViewController" customClass="MemeDetailController" customModule="MemeMaker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailController" id="0tk-6A-u4Z" userLabel="MemeDetailsViewController" customClass="MemeDetailController" customModule="MemeMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zcl-sc-H6y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
