@@ -40,6 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         //If a camera is available, this will be true, enabling the button.
         subscribeToKeyboardNotifications()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
