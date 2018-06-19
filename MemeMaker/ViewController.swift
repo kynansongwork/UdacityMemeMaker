@@ -141,10 +141,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func save(editedImage: UIImage) {
         
         let memeImage = Meme(
-            topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeView.image!, memeImage: editedImage
+            topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeView.image!, memeImage: editedImage)
             //Saves a meme object
-        )
-        
+            
+            //Adds to the meme array in AppDelegate
+            let memeObject = UIApplication.shared.delegate
+            let appDelegate =  memeObject as! AppDelegate
+            appDelegate.memes.append(memeImage)
+  
     }
     
     ////////////////////share functions////////////////////////
