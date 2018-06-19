@@ -164,9 +164,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         present(activityViewController, animated: true, completion: nil)
         
-        activityViewController.completionWithItemsHandler = { (_, _, _, _) in
-            self.save(editedImage: savedImage)
-            //Expects four return types. However in this case, none are available.
+        activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
+            if (success == true) {
+                self.save(editedImage: savedImage)
+                self.dismiss(animated: true, completion: nil)
+            }
+            //Expects four return types.
         }
     }
     
