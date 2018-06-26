@@ -11,7 +11,7 @@ import UIKit
 class MemeTableViewController: UITableViewController {
 
 
-        var memes: [Meme]!
+    var memes: [Meme]!
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,6 +31,8 @@ class MemeTableViewController: UITableViewController {
             
         let cell =  tableView.dequeueReusableCell(withIdentifier: "MemeTableCell")!
         let savedMeme = memes[(indexPath as NSIndexPath).row]
+        cell.textLabel?.text = savedMeme.topText
+        cell.detailTextLabel?.text = savedMeme.bottomText
             
         cell.imageView?.image = savedMeme.memeImage
             

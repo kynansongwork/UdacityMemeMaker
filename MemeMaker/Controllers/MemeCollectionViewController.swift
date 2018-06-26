@@ -11,7 +11,36 @@ import UIKit
 
 class MemeCollectionViewController : UICollectionViewController {
     
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
     var memes: [Meme]!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let space:CGFloat = 3.0
+        
+        flowLayout.minimumLineSpacing = space
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.itemSize = itemSizes()
+        
+    }
+    
+    func itemSizes() -> CGSize {
+        
+        let dimensionWidth = (view.frame.size.width - (2 * 3)) / 3.5
+        let dimensionHeight = (view.frame.size.height - (2 * 3)) / 3.5 //currently redundant.
+        var itemSize = CGSize()
+        
+        if view.frame.size.width < view.frame.size.height {
+            itemSize = CGSize(width: dimensionWidth, height: dimensionWidth)
+        } else {
+            itemSize = CGSize(width: dimensionHeight, height: dimensionHeight)
+        }
+        
+        return itemSize
+        
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
