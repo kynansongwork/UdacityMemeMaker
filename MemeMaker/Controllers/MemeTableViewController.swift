@@ -97,6 +97,5 @@ class MemeTableViewController: UITableViewController {
         deleteMemeIndexPath = nil
     }
     
-    //Currently only a temporary delete. Only deletes from present view but returns if the page is left. Need to delete from collection view as well.
 }
 
