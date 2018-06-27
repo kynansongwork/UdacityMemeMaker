@@ -49,6 +49,7 @@ class MemeCollectionViewController : UICollectionViewController {
         memes = appDelegate.memes
         collectionView!.reloadData()
         self.tabBarController?.tabBar.isHidden = false
+        
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

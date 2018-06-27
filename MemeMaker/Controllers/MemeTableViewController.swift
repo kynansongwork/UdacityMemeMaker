@@ -87,8 +87,7 @@ class MemeTableViewController: UITableViewController {
             appDelegate.memes.remove(at: indexPath.row)
             
             
-            tableView.deleteRows(at: [indexPath as IndexPath], with: .automatic)
-
+            tableView.deleteRows(at: [indexPath as IndexPath], with: .automatic) 
             deleteMemeIndexPath = nil
             tableView.endUpdates()
         }

@@ -19,6 +19,7 @@ class MemeDetailController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.memeImageView!.image = meme.memeImage
+        self.memeImageView.contentMode = UIViewContentMode.redraw
     }
     
     
