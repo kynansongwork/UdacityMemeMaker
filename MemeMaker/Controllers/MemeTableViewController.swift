@@ -13,11 +13,12 @@ class MemeTableViewController: UITableViewController {
 
     var memes: [Meme]!
     var deleteMemeIndexPath: NSIndexPath? = nil
+    let memeObject = UIApplication.shared.delegate
+    
         
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let memeObject = UIApplication.shared.delegate
-        let appDelegate =  memeObject as! AppDelegate
+        let appDelegate = memeObject as! AppDelegate
         memes = appDelegate.memes
         self.tabBarController?.tabBar.isHidden = false
         tableView!.reloadData()
@@ -58,6 +59,7 @@ class MemeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             deleteMemeIndexPath = indexPath as NSIndexPath
+            
             let memeToDelete = memes[indexPath.row]
             confirmDelete(meme: memeToDelete)
         }
@@ -79,6 +81,11 @@ class MemeTableViewController: UITableViewController {
         if let indexPath = deleteMemeIndexPath {
             tableView.beginUpdates()
             memes.remove(at: indexPath.row)
+            
+            //Need to call the appDelegate as well to delete the item from storage.
+            let appDelegate =  memeObject as! AppDelegate
+            appDelegate.memes.remove(at: indexPath.row)
+            
             
             tableView.deleteRows(at: [indexPath as IndexPath], with: .automatic)
 
