@@ -48,7 +48,7 @@ class MemeTableViewController: UITableViewController {
     }
     
     
-    // Delete functionality
+    //Delete functionality
     //Found on stackOverflow and https://www.andrewcbancroft.com/2015/07/16/uitableview-swipe-to-delete-workflow-in-swift/
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -61,7 +61,7 @@ class MemeTableViewController: UITableViewController {
             let memeToDelete = memes[indexPath.row]
             confirmDelete(meme: memeToDelete)
         }
-        //This will delete the data from array and will update the views.
+    //This will delete the data from array and will update the views.
     }
     
     func confirmDelete(meme: Meme) {
@@ -81,6 +81,7 @@ class MemeTableViewController: UITableViewController {
             memes.remove(at: indexPath.row)
             
             tableView.deleteRows(at: [indexPath as IndexPath], with: .automatic)
+
             deleteMemeIndexPath = nil
             tableView.endUpdates()
         }
@@ -90,6 +91,6 @@ class MemeTableViewController: UITableViewController {
         deleteMemeIndexPath = nil
     }
     
-    //Currently only a temporary delete. Only deletes from present view but returns if the page is left.
+    //Currently only a temporary delete. Only deletes from present view but returns if the page is left. Need to delete from collection view as well.
 }
 
