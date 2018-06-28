@@ -19,11 +19,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     let textViewDelegate = TextFieldDelegate()
-    let imagePickerController = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePickerController.delegate = self
         //Remeber to set this delegate or the image won't get picked.
         topTextField.delegate = textViewDelegate
         bottomTextField.delegate = textViewDelegate
@@ -55,6 +53,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickingBehaviour(sourceType: UIImagePickerControllerSourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
         imagePickerController.allowsEditing = false
         imagePickerController.sourceType = sourceType
         present(imagePickerController, animated: true, completion: nil)
@@ -99,6 +99,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             view.frame.origin.y = 0
         }
     }
+    
     //Checks if bottom text field is furst responder. If so it will shift the view based on keyboard size.
     
     func getKeyBoardHeight(_ notification:Notification) -> CGFloat {
@@ -176,10 +177,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //Reset function.
 
     @IBAction func resetState(_ sender: Any) {
-        let defaultText = "Tap here"
+        let defaultText = "Tap Here"
         topTextField.text = defaultText
         bottomTextField.text = defaultText
         memeView.image = nil
+        dismiss(animated: true, completion: nil)
         
     }
     

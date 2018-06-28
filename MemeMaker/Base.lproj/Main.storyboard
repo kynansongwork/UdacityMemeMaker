@@ -66,7 +66,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="113" height="107"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DPZ-aC-WaL" userLabel="MemeCollectionImage">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DPZ-aC-WaL" userLabel="MemeCollectionImage">
                                             <rect key="frame" x="-2" y="0.0" width="115" height="107"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -85,7 +85,7 @@
                     <navigationItem key="navigationItem" id="jQG-Lf-PIU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hrb-0b-eIa">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="bgE-bb-agN"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="bgE-bb-agN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -185,7 +185,7 @@
                     <navigationItem key="navigationItem" id="z6Y-bK-dmq">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nus-0J-yae">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="qzN-P4-aup"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="qzN-P4-aup"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -203,23 +203,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t3O-a3-zjd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tap here" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="FJH-jL-gxB" userLabel="topTextField">
-                                <rect key="frame" x="78" y="138" width="219" height="32"/>
+                                <rect key="frame" x="78" y="94" width="219" height="32"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tap here" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wh1-Lg-dLN" userLabel="bottomTextField">
-                                <rect key="frame" x="78" y="513" width="219" height="32"/>
+                                <rect key="frame" x="78" y="562" width="219" height="32"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbM-IZ-Ulx" userLabel="NavBar">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="fZn-Gy-cKc"/>
                                 </constraints>
@@ -238,7 +238,7 @@
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hjB-5h-SPZ">
-                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="gHa-Ig-EXJ"/>
                                 </constraints>
