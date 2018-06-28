@@ -12,8 +12,10 @@ import UIKit
 class TextFieldDelegate : NSObject, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.text = ""
-        //Allows text editing.
+        if textField.text == "Tap Here" {
+            textField.text = ""
+        }
+        //Allows text editing. Doesn't delete the text unless the default text is there.
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
