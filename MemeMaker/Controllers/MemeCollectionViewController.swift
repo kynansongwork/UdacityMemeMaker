@@ -18,27 +18,20 @@ class MemeCollectionViewController : UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let space:CGFloat = 3.0
+        var space: CGFloat
+        var dimenson: CGFloat
+        
+        if (UIDeviceOrientationIsPortrait(UIDevice.current.orientation)) {
+            space = 3.0
+            dimenson = (view.frame.size.width - (3 * space)) / 3.0
+        } else {
+            space = 1.0
+            dimenson = (view.frame.size.width - (1 * space)) / 5.0
+        }
         
         flowLayout.minimumLineSpacing = space
         flowLayout.minimumInteritemSpacing = space
-        flowLayout.itemSize = itemSizes()
-        
-    }
-    
-    func itemSizes() -> CGSize {
-        
-        let dimensionWidth = (view.frame.size.width - (2 * 3)) / 3.5
-        let dimensionHeight = (view.frame.size.height - (2 * 3)) / 3.5 //currently redundant.
-        var itemSize = CGSize()
-        
-        if view.frame.size.width < view.frame.size.height {
-            itemSize = CGSize(width: dimensionWidth, height: dimensionWidth)
-        } else {
-            itemSize = CGSize(width: dimensionHeight, height: dimensionHeight)
-        }
-        
-        return itemSize
+        flowLayout.itemSize = CGSize(width: dimenson, height: dimenson)
         
     }
     

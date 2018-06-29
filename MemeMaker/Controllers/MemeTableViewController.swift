@@ -37,7 +37,7 @@ class MemeTableViewController: UITableViewController {
         cell.detailTextLabel?.text = savedMeme.bottomText
             
         cell.imageView?.image = savedMeme.memeImage
-        cell.imageView?.contentMode = UIViewContentMode.scaleAspectFill
+        cell.imageView?.contentMode = UIViewContentMode.scaleAspectFit
             
         return cell
     }
